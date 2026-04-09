@@ -202,7 +202,8 @@ void detectPhase(float weight, float angle, float velocity) {
       if (weight < weightThresholdLiftoff && (angle - baselineAngle) < -10.0) {
           currentPhase = PRE_SWING;
           maxSwingAngle = angle; minSwingAngle = angle;
-      } break;
+      } 
+      break;
 
     case PRE_SWING:
       if (weight < (weightThresholdLiftoff * 0.2)) currentPhase = INITIAL_SWING;
@@ -277,8 +278,8 @@ void setup() {
 
   // Pressure Sensor Setup
   pressure_sensor.begin(DATA_PIN, CLOCK_PIN);
-  pressure_sensor.set_offset(58269);
-  pressure_sensor.set_scale(-84.412163); 
+  pressure_sensor.set_offset(8235729);
+  pressure_sensor.set_scale(8.23);
   pressure_sensor.tare(); 
   
   // IMU Setup
@@ -302,7 +303,7 @@ void setup() {
 // 9. MAIN LOOP
 // ==========================================
 void loop() {
-  if (myICM.dataReady()) {
+  if (myICM.dataReady() && pressure_sensor.is_ready()) {
     myICM.getAGMT(); 
     
     // Time tracking for Gyro
