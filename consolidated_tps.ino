@@ -1,7 +1,5 @@
 // ================================================================
-//  TPS_BEDay_Final.ino
-//  Triton Prosthetics Society — Bionic Knee Demo Firmware
-//  UCSD Bioengineering Senior Design — BE Day 2026
+//  Triton Prosthetics Society — Bionic Knee Demo
 //
 //  MERGED FROM:
 //    Abhishai : Blocks A2, A5, C, D3, D6, D7, D8, Setup, Main Loop
